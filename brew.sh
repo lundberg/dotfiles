@@ -23,6 +23,7 @@ brew install bash-completion2
 
 # Install tools
 brew install git
+brew install libjpeg
 
 # Install Python 2+3
 brew install python
