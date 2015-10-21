@@ -8,6 +8,11 @@ function doIt() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
 		--exclude "README.md" --exclude "LICENSE.txt" --exclude "brew.sh" -avh --no-perms . ~;
 	source ~/.bash_profile;
+
+  # Configure tmux
+  if which tmux > /dev/null; then
+    tmux source-file ~/.tmux.conf
+  fi;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
