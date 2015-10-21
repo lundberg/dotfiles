@@ -44,5 +44,9 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # TODO: Remove __pycache__ aswell
 alias cleanpyc="find . -name '*.pyc' -delete"
 
+# Docker
+alias cleancontainers='docker rm $(docker ps --no-trunc -aq)'
+alias cleanimages='docker rmi $(docker images --quiet --filter "dangling=true")'
+
 # Remote connection
 alias connect="ssh -t lundberg 'bash -i -c \"tmux a\"'"
