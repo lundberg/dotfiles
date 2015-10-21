@@ -1,7 +1,8 @@
 " Colors
 syntax enable           " enable syntax processing
 set background=dark
-let g:solarized_termtrans = 1
+let g:solarized_termtrans=1
+let g:solarized_termcolors=16
 colorscheme solarized
 
 " Misc
