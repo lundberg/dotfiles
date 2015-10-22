@@ -6,7 +6,8 @@ git pull origin master;
 
 function doIt() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-		--exclude "README.md" --exclude "LICENSE.txt" --exclude "brew.sh" -avh --no-perms . ~;
+		--exclude "README.md" --exclude "LICENSE.txt" --exclude "brew.sh" \
+    --exclude "apt.sh" -avh --no-perms . ~;
 	source ~/.bash_profile;
 
   # Configure tmux
