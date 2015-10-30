@@ -42,7 +42,7 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Remove pyc-files recursively
 # TODO: Remove __pycache__ aswell
-alias cleanpyc="find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf"
+alias cleanpyc='find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf'
 
 # Docker
 alias cleancontainers='docker rm $(docker ps --no-trunc -aq)'
