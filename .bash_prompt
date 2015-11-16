@@ -61,22 +61,21 @@ prompt_git() {
 
 function prompt_virtualenv() {
 	local venv='';
-    # Get Virtual Env
-    if [[ -n "$VIRTUAL_ENV" ]]; then
-        # Strip out the path and just leave the env name
-        venv="${VIRTUAL_ENV##*/}";
-    fi
-    [[ -n "$venv" ]] && echo "(venv:$venv) ";
+	# Get Virtual Env
+	if [[ -n "$VIRTUAL_ENV" ]]; then
+		# Strip out the path and just leave the env name
+		venv="${VIRTUAL_ENV##*/}";
+	fi
+	[[ -n "$venv" ]] && echo "(venv:$venv) ";
 }
 
 function prompt_docker() {
 	local docker='';
-    # Get docker machine
-    if [[ -n "$DOCKER_MACHINE_NAME" ]]; then
-        # Strip out the path and just leave the env name
-        docker="${DOCKER_MACHINE_NAME}";
-    fi
-    [[ -n "$docker" ]] && echo "(docker:$docker) ";
+	# Get docker machine
+	if [[ -n "$DOCKER_MACHINE_NAME" ]]; then
+		docker="${DOCKER_MACHINE_NAME}";
+	fi
+	[[ -n "$docker" ]] && echo "(dock:$docker) ";
 }
 
 if false && tput setaf 1 &> /dev/null; then
@@ -127,7 +126,7 @@ function bash_prompt() {
 	# Set the terminal title to the current working directory.
 	local prompt="\[\033]0;\w\007\]";
 	prompt+="\[${bold}\]\n"; # newline
-	prompt+="\[${cyan}\]$(prompt_docker)";
+	prompt+="\[${blue}\]$(prompt_docker)";
 	prompt+="\[${cyan}\]$(prompt_virtualenv)";
 	prompt+="\[${userStyle}\]\u"; # username
 	prompt+="\[${white}\]@";

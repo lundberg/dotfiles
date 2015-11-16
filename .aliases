@@ -41,7 +41,6 @@ alias map="xargs -n1"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Remove pyc-files recursively
-# TODO: Remove __pycache__ aswell
 alias cleanpyc='find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf'
 
 # Docker
@@ -50,3 +49,17 @@ alias cleanimages='docker rmi $(docker images --quiet --filter "dangling=true")'
 
 # Remote connection
 alias connect="ssh -t lundberg 'bash -i -c \"tmux a\"'; clear"
+
+# Docker machine use/deactivate
+function use-machine () {
+  eval "$(docker-machine env "$@")"
+  source ~/.bash_prompt
+}
+
+function deactivate-machine () {
+  unset DOCKER_TLS_VERIFY
+  unset DOCKER_HOST
+  unset DOCKER_CERT_PATH
+  unset DOCKER_MACHINE_NAME
+  source ~/.bash_prompt
+}
