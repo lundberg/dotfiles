@@ -49,6 +49,7 @@ alias cleanimages='docker rmi $(docker images --quiet --filter "dangling=true")'
 
 # Remote connection
 alias connect="ssh -t lundberg 'bash -i -c \"tmux a\"'; clear"
+alias disconnect="kill -9 \$(pgrep -f 'ssh -t lundberg bash -i -c \"tmux a\"')"
 
 # Docker machine use/deactivate
 function use-machine () {
