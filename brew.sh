@@ -22,6 +22,7 @@ brew tap homebrew/versions
 brew install bash-completion2
 
 # Install tools
+brew install htop
 brew install git
 brew install libjpeg
 
