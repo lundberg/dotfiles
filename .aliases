@@ -46,6 +46,7 @@ alias cleanpyc='find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf'
 # Docker
 alias cleancontainers='docker rm $(docker ps --no-trunc -aq)'
 alias cleanimages='docker rmi $(docker images --quiet --filter "dangling=true")'
+alias cleanvolumes='docker volume ls -qf 'dangling=true' | grep -x ".\{64\}" | xargs -I{} docker volume rm  {}'
 
 # Remote connection
 alias connect="ssh -t lundberg 'bash -i -c \"tmux a\"'; clear"
