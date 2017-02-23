@@ -14,6 +14,11 @@ function doIt() {
   if which tmux > /dev/null; then
     tmux source-file ~/.tmux.conf
   fi;
+
+  # Install/Update neovim vim-plug plugin
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  nvim --headless +PlugInstall +quitall
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
