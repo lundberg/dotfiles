@@ -25,6 +25,7 @@ brew install bash-completion2
 brew install htop
 brew install git
 brew install libjpeg
+brew install neovim/neovim/neovim
 
 # Install Python 2+3
 brew install python
