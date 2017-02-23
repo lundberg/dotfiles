@@ -170,55 +170,36 @@ endfunction
 nmap <F12> :call BuildCTags()<CR>
 
 
-" Plugin specific settings
-function! SetPluginOptions()
+" git
+nmap <leader>gg :GitGutterToggle<CR>
+"nmap <leader>gs <Plug>GitGutterStageHunk
+"nmap <leader>gr <Plug>GitGutterUndoHunk
+" ALT-SHIFT-k
+nmap º :GitGutterPrevHunk<CR>
+" ALT-SHIFT-j
+nmap ¬ :GitGutterNextHunk<CR>
 
-    " git
-    if exists("GitGutter")
-        nmap <leader>gg :GitGutterToggle<CR>
-        "nmap <leader>gs <Plug>GitGutterStageHunk
-        "nmap <leader>gr <Plug>GitGutterUndoHunk
-        " ALT-SHIFT-k
-        nmap º :GitGutterPrevHunk<CR>
-        " ALT-SHIFT-j
-        nmap ¬ :GitGutterNextHunk<CR>
-    endif
 
-    " CTRL-P
-    if exists("CtrlP")
-        nmap <C-o> :CtrlPTag<CR>
-        nmap <C-e> :CtrlPBuffer<CR>
-        nmap öö :CtrlPtjump<CR>
-        "let g:ctrlp_prompt_mappings = {
-        "    \ 'AcceptSelection("e")': ['<c-r>'],
-        "    \ 'AcceptSelection("h")': ['<c-x>', '<c-s>'],
-        "    \ 'AcceptSelection("t")': ['<cr>', '<3-LeftMouse>'],
-        "    \ 'AcceptSelection("v")': ['<c-v>', '<RightMouse>'],
-        "    \ }
-        let g:ctrlp_tjump_only_silent = 1
-        "let g:ctrlp_switch_buffer = ''
-    endif
+" CTRL-P
+nmap <C-o> :CtrlPTag<CR>
+nmap <C-e> :CtrlPBuffer<CR>
+nmap öö :CtrlPtjump<CR>
+let g:ctrlp_tjump_only_silent = 1
 
-    " Far
-    if exists(":Far")
-        let g:far#window_layout = 'current'  " Open FAR in current window
-        let g:far#preview_window_layout = 'right'  " Show preview in right split
-        let g:far#file_mask_favorites = ['**/*.py', '**/*.html', '**/*.js', '**/*.css', '**/*.*', '%']
-        nmap <leader>f :F<space>
-    endif
 
-    " NERDTree
-    if exists(":NERDTree")
-        let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
-        let NERDTreeIgnore = ['\.pyc$']
-        "let NERDTreeMapOpenInTab='<ENTER>'
-        "map <C-n> :NERDTreeTabsToggle<CR>
-        nmap <C-n> :NERDTreeToggle<CR>
-        "nmap <C-m> :NERDTreeFocusToggle<CR>
-        nmap <leader><lt> :NERDTreeFind<CR>
-    endif
+" Far
+let g:far#window_layout = 'current'  " Open FAR in current window
+let g:far#preview_window_layout = 'right'  " Show preview in right split
+let g:far#file_mask_favorites = ['**/*.py', '**/*.html', '**/*.js', '**/*.css', '**/*.*', '%']
+nmap <leader>f :F<space>
 
-endfunction
+
+" NERDTree
+let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
+let NERDTreeIgnore = ['\.pyc$']
+nmap <C-n> :NERDTreeToggle<CR>
+nmap <leader><lt> :NERDTreeFind<CR>
+
 
 " Airline
 let g:airline#extensions#tabline#enabled=1
@@ -229,5 +210,3 @@ let g:Powerline_symbols = 'unicode'
 let g:airline_symbols = {}
 let g:airline_symbols.space = "\ua0"
 let g:airline_theme='onedark'
-
-au VimEnter * call SetPluginOptions()
