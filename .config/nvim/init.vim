@@ -21,17 +21,27 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'Valloric/YouCompleteMe', { 'on': [] }
 "Plug 'klen/python-mode'
-"Plug 'bfredl/nvim-ipy'
 "Plug 'xolox/vim-easytags'
+"Plug 'bfredl/nvim-ipy'
  
-" Colorschemes
+" Color schemes and icons
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
+
+
+" Defer plugin loading
+augroup load_deferred_plugins
+  autocmd!
+  autocmd InsertEnter * call plug#load('YouCompleteMe')
+                     \| autocmd! load_deferred_plugins
+augroup END
+
 
 colorscheme onedark
 source ~/.vimrc
