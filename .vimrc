@@ -9,6 +9,8 @@ set showmatch                   " Higlight matching parenthesis
 set mouse=a                     " Enable mouse
 set laststatus=2                " Show airline on open
 set modelines=1                 " Enable file specific vim config
+set splitbelow                  " Open vertical splits below
+set splitright                  " Open horizontal split right
 set backspace=indent,eol,start  " Normal backspace
 set tags=.tags                  " Set ctags folder name
 set ttimeoutlen=10              " faster leaving insert mode,
@@ -123,10 +125,12 @@ nmap <C-l> <C-W>l
 " Buffer/panel/tab management
 "nnoremap <tab> :tabnext<CR>
 "nnoremap <BS> :tabprevious<CR>
-nmap <tab> :bn<CR>
-nmap <BS> :bp<CR>
+nmap <silent> <tab> :bn<CR>
+nmap <silent> <BS> :bp<CR>
 " Expand panel
 nmap + :only<CR>
+" Normalize all split sizes : ALT-+
+nmap = <C-W>=
 " Close panel
 nmap - :close<CR>
 " Close buffer : ALT-w
