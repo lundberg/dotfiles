@@ -1,3 +1,11 @@
+" Ensure vim-plug is installed and auto loaded
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync
+endif
+
+" Enable plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'scrooloose/syntastic'
