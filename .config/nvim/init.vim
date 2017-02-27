@@ -25,7 +25,7 @@ Plug 'Valloric/YouCompleteMe', { 'on': [] }
 "Plug 'klen/python-mode'
 "Plug 'xolox/vim-easytags'
 "Plug 'bfredl/nvim-ipy'
- 
+
 " Color schemes and icons
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'

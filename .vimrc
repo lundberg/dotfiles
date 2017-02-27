@@ -214,3 +214,7 @@ let g:Powerline_symbols = 'unicode'
 let g:airline_symbols = {}
 let g:airline_symbols.space = "\ua0"
 let g:airline_theme='onedark'
+
+
+" YouCompleteMe
+let g:ycm_python_binary_path = 'python'
