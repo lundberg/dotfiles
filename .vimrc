@@ -94,6 +94,7 @@ let g:mapleader=','
 " Search
 nmap <leader>s /
 nnoremap <silent> <CR> :nohlsearch<CR><CR>
+nnoremap <silent> <ESC> :nohlsearch<CR>
 set ignorecase          " ignore case when searching
 set smartcase           " be case sensitive when non lowercase
 set incsearch           " search as characters are entered
