@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'Raimondi/delimitMate'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'brooth/far.vim'
