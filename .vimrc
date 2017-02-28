@@ -81,6 +81,11 @@ set fillchars=
 highlight EndOfBuffer guifg=bg
 
 
+" Modes
+" Exit insert mode: Ctrl-ö
+imap <C-\> <ESC>
+
+
 " Leader key
 let mapleader=','
 let g:mapleader=','
