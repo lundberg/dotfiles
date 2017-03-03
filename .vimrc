@@ -147,8 +147,8 @@ nmap <silent> <tab> :bn<CR>
 nmap <silent> <BS> :bp<CR>
 " Expand panel
 nmap + :only<CR>
-" Normalize all split sizes : ALT-+
-nmap = <C-W>=
+" Normalize all split sizes : ALT-0
+nmap ≈ <C-W>=
 " Close panel
 nmap - :close<CR>
 " Close buffer : ALT-w
