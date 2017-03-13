@@ -27,6 +27,13 @@ Plug 'Valloric/YouCompleteMe', { 'on': [] }
 "Plug 'xolox/vim-easytags'
 "Plug 'bfredl/nvim-ipy'
 
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'groenewege/vim-less'
+Plug 'elzr/vim-json'
+Plug 'plasticboy/vim-markdown'
+Plug 'ekalinin/Dockerfile.vim'
+
 " Color schemes and icons
 Plug 'joshdick/onedark.vim'
 Plug 'KeitaNakamura/neodark.vim'
