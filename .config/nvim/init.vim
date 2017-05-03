@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Raimondi/delimitMate'
 
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'brooth/far.vim'
 
 Plug 'vim-airline/vim-airline'
