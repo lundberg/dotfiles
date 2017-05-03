@@ -28,6 +28,7 @@ Plug 'Valloric/YouCompleteMe', { 'on': [] }
 "Plug 'xolox/vim-easytags'
 "Plug 'bfredl/nvim-ipy'
 
+" TODO: Defer loading based on extension
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
