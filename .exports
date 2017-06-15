@@ -29,9 +29,6 @@ export LESS_TERMCAP_ZW=$(tput rsupm)
 # Don’t clear the screen after quitting a manual page.
 export MANPAGER='less -X';
 
-# Always enable colored `grep` output.
-export GREP_OPTIONS='--color=auto';
-
 # Setup virtualenvwrapper
 export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
 export VIRTUALENVWRAPPER_HOOK_DIR=$HOME/.virtualenvwrapper
