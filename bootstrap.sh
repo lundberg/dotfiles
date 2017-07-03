@@ -15,6 +15,9 @@ function doIt() {
     tmux source-file ~/.tmux.conf
   fi;
 
+  # Install neovim python package
+  sudo pip3 install neovim
+
   # Install/Update neovim vim-plug plugin
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

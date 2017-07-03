@@ -69,7 +69,9 @@ augroup configgroup
     autocmd BufEnter *.yml,*.yaml setlocal softtabstop=2
 augroup END
 
-" Python indentation
+" Python indentation etc
+let g:python_host_prog = 'python'
+let g:python3_host_prog = 'python3'
 au BufNewFile,BufRead *.py set
     \ expandtab
     \ autoindent
@@ -213,6 +215,7 @@ let g:ctrlp_tjump_only_silent = 1
 let g:far#window_layout = 'current'  " Open FAR in current window
 let g:far#preview_window_layout = 'right'  " Show preview in right split
 let g:far#file_mask_favorites = ['**/*.py', '**/*.html', '**/*.js', '**/*.css', '**/*.*', '%']
+let g:far#source = 'agnvim'
 nmap <leader>f :F<space>
 
 
