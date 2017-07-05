@@ -30,6 +30,36 @@ set t_8f=[38;2;%lu;%lu;%lum  " Tmux
 set t_8b=[48;2;%lu;%lu;%lum  " Tmux
 set t_ut=                      " Tmux (empty background color)
 
+if !exists('g:light_colorscheme')
+    let g:light_colorscheme='delek'
+endif
+if !exists('g:dark_colorscheme')
+    let g:dark_colorscheme='desert'
+endif
+
+function! g:SetColorScheme()
+    " Set colorscheme based on background
+    exe "colorscheme " . (&background == 'dark' ? g:dark_colorscheme : g:light_colorscheme)
+
+    " Hide some UI stuff, like ~ beneath buffer
+    set fillchars=
+    highlight EndOfBuffer guifg=bg
+endfunction
+
+function! g:ToggleColorScheme()
+    " Toggle background
+    let &background = (&background == 'dark') ? 'light' : 'dark'
+
+    call SetColorScheme()
+
+    " Refresh dev icons in nerdtree
+    if exists('g:NERDTree')
+        call webdevicons#softRefresh()
+    endif
+endfunction
+
+nmap <F2> :call ToggleColorScheme()<CR>
+
 
 " MacVim
 set guioptions-=r
@@ -90,9 +120,6 @@ set writebackup
 set backup
 
 
-" Hide some UI stuff, like ~ beneath buffer
-set fillchars=
-highlight EndOfBuffer guifg=bg
 
 
 " Modes
@@ -230,6 +257,16 @@ nmap <C-n> :NERDTreeToggle<CR>
 nmap <leader><lt> :NERDTreeFind<CR>
 
 
+" Devicons
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
+"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"let g:DevIconsEnableFoldersOpenClose = 1
+
+
 " Airline
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#show_buffers=1
@@ -242,3 +279,7 @@ let g:airline_symbols.space = "\ua0"
 
 " YouCompleteMe
 let g:ycm_python_binary_path = 'python'
+
+
+" Last but not least, set the color scheme
+call SetColorScheme()

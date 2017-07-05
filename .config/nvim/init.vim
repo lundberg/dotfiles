@@ -42,6 +42,7 @@ Plug 'KeitaNakamura/neodark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'icymind/NeoSolarized'
+Plug 'freeo/vim-kalisi'
 
 call plug#end()
 
@@ -54,14 +55,17 @@ augroup load_deferred_plugins
 augroup END
 
 
-source ~/.vimrc
+" Set color scheme
+let g:light_colorscheme='NeoSolarized'
+let g:dark_colorscheme='onedark'
+"let g:dark_colorscheme='kalisi'
+"let g:dark_colorscheme='PaperColor'
 
-set background=light
-colorscheme onedark
-"colorscheme PaperColor
-"colorscheme NeoSolarized
-
-" Doesn't need to make any difference anymore
 "let g:airline_theme='onedark'
-"let g:airline_theme='PaperColor'
+"let g:airline_theme='papercolor'
+"let g:airline_theme='kalisi'
 "let g:airline_theme='solarized'
+
+
+" Load global vim config
+source ~/.vimrc
