@@ -96,8 +96,11 @@ highlight EndOfBuffer guifg=bg
 
 
 " Modes
-" Exit insert mode: Ctrl-ö
+" Escape faster, e.g. exit insert mode
+" Ctrl-ö
+map <C-\> <ESC>
 imap <C-\> <ESC>
+cmap <C-\> <C-c>
 
 
 " Leader key
@@ -208,6 +211,7 @@ nmap ¬ :GitGutterNextHunk<CR>
 nmap <C-o> :CtrlPTag<CR>
 nmap <C-e> :CtrlPBuffer<CR>
 nmap öö :CtrlPtjump<CR>
+
 let g:ctrlp_tjump_only_silent = 1
 
 
