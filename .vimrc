@@ -127,7 +127,7 @@ set backup
 " Ctrl-ö
 map <C-\> <ESC>
 imap <C-\> <ESC>
-cmap <C-\> <C-c>
+cmap <C-\> <CR><ESC>
 
 
 " Leader key
