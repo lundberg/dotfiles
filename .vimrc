@@ -145,6 +145,9 @@ set smartcase           " be case sensitive when non lowercase
 set incsearch           " search as characters are entered
 set hlsearch            " highlight all matches
 
+" Replace current word, ESC when done, hit . to repeat following matches
+nmap <leader>r *Ncgn
+
 
 " Folding
 set foldmethod=indent
