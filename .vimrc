@@ -110,6 +110,7 @@ au BufNewFile,BufRead *.py set
     \ shiftwidth=4
     \ textwidth=79
     \ fileformat=unix
+au FileType python map <silent> <leader>b Oimport pdb; pdb.set_trace()<ESC>w:w<CR>
 
 
 " Swaps / Backups
