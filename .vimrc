@@ -202,7 +202,7 @@ nmap ˝ :bd!<CR>
 
 
 " Save : ALT+s
-nmap <leader>w :w!<cr>
+nmap <silent> <leader>w :up!<CR>
 nmap ß :w!<cr>
 " Reload file : ALT+r
 nmap ® :edit!<CR>
@@ -264,7 +264,7 @@ nmap <leader>f :F<space>
 " NERDTree
 let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
 let NERDTreeIgnore = ['\.pyc$']
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <silent> <C-n> :NERDTreeToggle<CR>
 nmap <leader><lt> :NERDTreeFind<CR>
 
 
