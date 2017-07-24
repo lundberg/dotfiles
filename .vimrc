@@ -289,8 +289,9 @@ let g:airline_symbols.space = "\ua0"
 
 
 " YouCompleteMe
+set completeopt=menuone  " i.e. -=preview
 let g:ycm_python_binary_path = 'python'
-
-
-" Last but not least, set the color scheme
-call SetColorScheme()
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+" Support suggestion selection with enter key
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>\<ESC>a" : "\<CR>"
