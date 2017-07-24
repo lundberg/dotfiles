@@ -25,37 +25,56 @@ let python_highlight_all=2
 
 " Colors
 set termguicolors
-set background=dark
 set t_8f=[38;2;%lu;%lu;%lum  " Tmux
 set t_8b=[48;2;%lu;%lu;%lum  " Tmux
 set t_ut=                      " Tmux (empty background color)
 
-if !exists('g:light_colorscheme')
-    let g:light_colorscheme='delek'
-endif
-if !exists('g:dark_colorscheme')
-    let g:dark_colorscheme='desert'
-endif
+"set background=
+"let &background = g:COLOR
+
+function! g:InitColorScheme()
+    if !exists('g:COLOR')
+        let g:COLOR='dark' | echo 'Setting default colors'
+    endif
+    if !exists('g:LIGHT')
+        let g:LIGHT='delek'
+    endif
+    if !exists('g:DARK')
+        let g:DARK='desert'
+    endif
+
+    call SetColorScheme()
+
+    " Reload airline theme now when "remembered" g:COLOR is available
+    call airline#switch_matching_theme()
+endfunction
+
+autocmd VimEnter * call InitColorScheme()
+
+" Hide some UI stuff, like ~ beneath buffer
+au ColorScheme *
+    \ set fillchars= |
+    \ highlight EndOfBuffer guifg=bg
 
 function! g:SetColorScheme()
-    " Set colorscheme based on background
-    exe "colorscheme " . (&background == 'dark' ? g:dark_colorscheme : g:light_colorscheme)
+    exe "set background=" . g:COLOR
+    exe "colorscheme " . (g:COLOR == 'dark' ? g:DARK : g:LIGHT)
 
     " Hide some UI stuff, like ~ beneath buffer
     set fillchars=
     highlight EndOfBuffer guifg=bg
-endfunction
-
-function! g:ToggleColorScheme()
-    " Toggle background
-    let &background = (&background == 'dark') ? 'light' : 'dark'
-
-    call SetColorScheme()
 
     " Refresh dev icons in nerdtree
     if exists('g:NERDTree')
         call webdevicons#softRefresh()
     endif
+endfunction
+
+function! g:ToggleColorScheme()
+    " Toggle dark vs light
+    let g:COLOR = (g:COLOR == 'dark') ? 'light' : 'dark'
+
+    call SetColorScheme()
 endfunction
 
 nmap <F2> :call ToggleColorScheme()<CR>
@@ -119,8 +138,6 @@ set backupdir=~/.vim/backups
 set backupskip=/tmp/*,/private/tmp/*
 set writebackup
 set backup
-
-
 
 
 " Modes

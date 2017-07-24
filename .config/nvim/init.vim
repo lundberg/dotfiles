@@ -71,10 +71,10 @@ let g:clipboard = {
 
 
 " Set color scheme
-let g:light_colorscheme='NeoSolarized'
-let g:dark_colorscheme='onedark'
-"let g:dark_colorscheme='kalisi'
+"let g:dark_colorscheme='onedark'
 "let g:dark_colorscheme='PaperColor'
+"let g:dark_colorscheme='kalisi'
+"let g:light_colorscheme='NeoSolarized'
 
 "let g:airline_theme='onedark'
 "let g:airline_theme='papercolor'
