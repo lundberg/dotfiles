@@ -1,6 +1,6 @@
 set encoding=utf-8
 set nocompatible
-set clipboard=unnamed           " Share clipboard with os
+set clipboard=unnamedplus       " Share clipboard with os
 set ttyfast                     " Optimization
 set updatetime=250              " Optimization
 set number                      " Enable line numbers

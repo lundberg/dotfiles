@@ -55,6 +55,21 @@ augroup load_deferred_plugins
 augroup END
 
 
+" Clipboard
+let g:clipboard = {
+      \   'name': 'lundberg',
+      \   'copy': {
+      \      '+': 'tmux load-buffer -',
+      \      '*': 'tmux load-buffer -',
+      \    },
+      \   'paste': {
+      \      '+': 'tmux save-buffer -',
+      \      '*': 'tmux save-buffer -',
+      \   },
+      \   'cache_enabled': 1,
+      \ }
+
+
 " Set color scheme
 let g:light_colorscheme='NeoSolarized'
 let g:dark_colorscheme='onedark'
