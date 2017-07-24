@@ -176,6 +176,13 @@ nmap <C-h> <C-W>h
 nmap <C-l> <C-W>l
 
 
+" Buffer movement in insert mode
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<Down>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<Up>"
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
+
 " Buffer/panel/tab management
 "nnoremap <tab> :tabnext<CR>
 "nnoremap <BS> :tabprevious<CR>
