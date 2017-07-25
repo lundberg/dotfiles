@@ -28,9 +28,8 @@ set termguicolors
 set t_8f=[38;2;%lu;%lu;%lum  " Tmux
 set t_8b=[48;2;%lu;%lu;%lum  " Tmux
 set t_ut=                      " Tmux (empty background color)
-
-"set background=
-"let &background = g:COLOR
+"set background=dark
+"colorscheme desert
 
 function! g:InitColorScheme()
     if !exists('g:COLOR')
@@ -48,13 +47,6 @@ function! g:InitColorScheme()
     " Reload airline theme now when "remembered" g:COLOR is available
     call airline#switch_matching_theme()
 endfunction
-
-autocmd VimEnter * call InitColorScheme()
-
-" Hide some UI stuff, like ~ beneath buffer
-au ColorScheme *
-    \ set fillchars= |
-    \ highlight EndOfBuffer guifg=bg
 
 function! g:SetColorScheme()
     exe "set background=" . g:COLOR
@@ -77,6 +69,7 @@ function! g:ToggleColorScheme()
     call SetColorScheme()
 endfunction
 
+autocmd VimEnter * call InitColorScheme()
 nmap <F2> :call ToggleColorScheme()<CR>
 
 
