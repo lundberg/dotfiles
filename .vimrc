@@ -211,6 +211,11 @@ nmap <bar> :vsplit<CR>
 nmap ˝ :bd!<CR>
 
 
+" Copy / Paste
+" Paste in visual mode from 0 register
+vnoremap p "0p
+
+
 " Save : ALT+s
 nmap <silent> <leader>w :up!<CR>
 nmap ß :w!<cr>
