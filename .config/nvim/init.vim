@@ -8,7 +8,8 @@ endif
 " Enable plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'scrooloose/syntastic'
+"Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'Raimondi/delimitMate'
