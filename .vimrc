@@ -288,11 +288,19 @@ let g:ctrlp_tjump_only_silent = 1
 
 
 " Far
-let g:far#window_layout = 'current'  " Open FAR in current window
-let g:far#preview_window_layout = 'right'  " Show preview in right split
+"let g:far#window_layout = 'bottom'  " Open FAR in current window
+"let g:far#preview_window_layout = 'top'  " Show preview in right split
+let g:far#window_height = 11
+let g:far#preview_window_height = 20
+let g:far#window_min_content_width = 80
 let g:far#file_mask_favorites = ['**/*.py', '**/*.html', '**/*.js', '**/*.css', '**/*.*', '%']
 let g:far#source = 'agnvim'
+
 nmap <leader>f :F<space>
+" Search for visual selection
+vnoremap <silent> <expr> <leader>f '"0y:F ' . @0 . ' .<CR>'
+" Search for word under cursor i.e. usages
+nnoremap <silent> <expr> ää '"0yiw:F ' . @0 . ' .<CR>'
 
 
 " NERDTree
