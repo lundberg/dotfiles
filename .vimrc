@@ -133,6 +133,11 @@ set writebackup
 set backup
 
 
+" Help
+" Follow link and jump to subject/topic
+nnoremap <buffer> <CR> <C-]>
+
+
 " Modes
 " Escape faster, e.g. exit insert mode
 " Ctrl-ö
