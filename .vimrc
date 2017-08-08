@@ -254,7 +254,7 @@ nmap <silent> √ :lnext<CR>
 function! BuildCTags()
     echohl Comment
     echo 'Building ctags... '
-    silent! exe "!ctags -R --languages=python --python-kinds=-iv -f .tags &> /dev/null"
+    silent! exe "!ctags -R --languages=python --python-kinds=-iv --exclude=.git --sort=foldcase -f .tags &> /dev/null"
     redraw!
     echohl String
     echo "Successfully generated ctags!"
