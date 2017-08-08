@@ -38,7 +38,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'ekalinin/Dockerfile.vim'
 
 " Color schemes and icons
-Plug 'joshdick/onedark.vim'
+Plug 'rakr/vim-one'
 Plug 'KeitaNakamura/neodark.vim'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
