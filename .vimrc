@@ -341,3 +341,12 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 " Support suggestion selection with enter key
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>\<ESC>a" : "\<CR>"
+
+
+" A.L.E
+"highlight clear ALEErrorSign
+"highlight clear ALEWarningSign
+let g:airline#extensions#ale#enabled = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '⚠'  " ⚡
+let g:ale_sign_column_always = 1
