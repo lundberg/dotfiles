@@ -170,6 +170,7 @@ nmap <leader>r *Ncgn
 " Folding
 set foldmethod=indent
 set foldlevel=99
+nnoremap <silent> <space> @=(foldlevel('.')?'za':"\<space>")<CR>
 
 
 " Command menu tab completion
