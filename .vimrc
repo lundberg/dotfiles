@@ -70,7 +70,7 @@ function! g:ToggleColorScheme()
 endfunction
 
 autocmd VimEnter * call InitColorScheme()
-nmap <F2> :call ToggleColorScheme()<CR>
+nmap <silent> <F2> :call ToggleColorScheme()<CR>
 
 
 " MacVim
@@ -208,16 +208,21 @@ inoremap <C-l> <Right>
 nmap <silent> <tab> :bn<CR>
 nmap <silent> <BS> :bp<CR>
 " Expand panel
-nmap + :only<CR>
+nmap <silent> + :only<CR>
 " Normalize all split sizes : ALT-0
 nmap ≈ <C-W>=
+" Resize left most pane to 86 width (80 + gutter + lineno)
+nmap <silent> ≠ 100<C-w>h:vertical resize 86<CR>
 " Close panel
-nmap - :close<CR>
+nmap <silent> - :close<CR>
+" Close buffer and panel
+nmap <silent> – :bd<CR>
 " Close buffer : ALT-w
-nmap Ω :bd<CR>
-nmap <bar> :vsplit<CR>
+nmap <silent> Ω :bp \| bd #<CR>
 " Force close buffer : SHIFT-ALT-w
-nmap ˝ :bd!<CR>
+nmap <silent> ˝ :bp \| bd! #<CR>
+" Horizontal split
+nmap <silent> <bar> :vsplit<CR>
 
 
 " Copy / Paste
@@ -227,22 +232,22 @@ vnoremap p "0p
 
 " Save : ALT+s
 nmap <silent> <leader>w :up!<CR>
-nmap ß :w!<cr>
+nmap <silent> ß :w!<cr>
 " Reload file : ALT+r
-nmap ® :edit!<CR>
+nmap <silent> ® :edit!<CR>
 " Quit : ALT-q
-nmap • :quit<CR>
+nmap <silent> • :quit<CR>
 " Force quit : SHIFT-ALT-q
-nmap ° :quitall!<CR>
+nmap <silent> ° :quitall!<CR>
 
 
 " Location window:
 " Current : ALT-l
-nmap ﬁ :ll<CR>
+nmap <silent> ﬁ :ll<CR>
 " Previous : ALT-k
-nmap ª :lprevious<CR>
+nmap <silent> ª :lprevious<CR>
 " Next : ALT-j
-nmap √ :lnext<CR>
+nmap <silent> √ :lnext<CR>
 
 
 " ctags
@@ -260,19 +265,24 @@ nmap <F12> :call BuildCTags()<CR>
 
 
 " git
-nmap <leader>gg :GitGutterToggle<CR>
-"nmap <leader>gs <Plug>GitGutterStageHunk
-"nmap <leader>gr <Plug>GitGutterUndoHunk
+nmap <silent> <leader>gu :Git up<CR>
+nmap <silent> <leader>gl :GV<CR>
+nmap <silent> <leader>gs :Gstatus<CR>
+nmap <silent> <leader>gg :Gcommit -v<CR>
+nmap <silent> <leader>gb :Gblame<CR>
+nmap <silent> <leader>gt :GitGutterToggle<CR>
+nmap <leader>g+ <Plug>GitGutterStageHunk
+nmap <leader>g- <Plug>GitGutterUndoHunk
 " ALT-SHIFT-k
-nmap º :GitGutterPrevHunk<CR>
+nmap <silent> º :GitGutterPrevHunk<CR>
 " ALT-SHIFT-j
-nmap ¬ :GitGutterNextHunk<CR>
+nmap <silent> ¬ :GitGutterNextHunk<CR>
 
 
 " CTRL-P
-nmap <C-o> :CtrlPTag<CR>
-nmap <C-e> :CtrlPBuffer<CR>
-nmap öö :CtrlPtjump<CR>
+nmap <silent> <C-o> :CtrlPTag<CR>
+nmap <silent> <C-e> :CtrlPBuffer<CR>
+nmap <silent> öö :CtrlPtjump<CR>
 
 let g:ctrlp_tjump_only_silent = 1
 
@@ -289,7 +299,7 @@ nmap <leader>f :F<space>
 let g:NERDCustomDelimiters = { 'cA': { 'right': '  # ' } }
 let NERDTreeIgnore = ['\.pyc$']
 nmap <silent> <C-n> :NERDTreeToggle<CR>
-nmap <leader><lt> :NERDTreeFind<CR>
+nmap <silent> <leader><lt> :NERDTreeFind<CR>
 
 
 " Devicons
