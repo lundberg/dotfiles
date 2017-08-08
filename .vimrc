@@ -321,13 +321,17 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding = ''
 
 
 " Airline
-let g:airline#extensions#tabline#enabled=1
-let g:airline#extensions#tabline#show_buffers=1
-let g:airline#extensions#tabline#show_tabs=1
-let g:airline_powerline_fonts=1
-let g:Powerline_symbols = 'unicode'
-let g:airline_symbols = {}
-let g:airline_symbols.space = "\ua0"
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tabs = 1
+let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#hunks#enabled = 0
+let g:airline#extensions#wordcount#enabled = 0
+let g:airline#extensions#ycm#enabled = 0
+let g:airline_powerline_fonts = 1
+"let g:Powerline_symbols = 'unicode'
+"let g:airline_symbols = {}
+"let g:airline_symbols.space = "\ua0"
 
 
 " YouCompleteMe
