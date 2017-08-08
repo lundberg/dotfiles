@@ -22,6 +22,7 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/gv.vim'
 
 Plug 'Valloric/YouCompleteMe', { 'on': [] }
 "Plug 'klen/python-mode'
