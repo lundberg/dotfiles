@@ -4,7 +4,7 @@ cd "$(dirname "${BASH_SOURCE}")";
 
 git pull origin master;
 
-function doIt() {
+function update() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
 		--exclude "README.md" --exclude "LICENSE.txt" --exclude "brew.sh" \
     --exclude "apt.sh" -avh --no-perms . ~;
@@ -14,26 +14,34 @@ function doIt() {
   if which tmux > /dev/null; then
     tmux source-file ~/.tmux.conf
   fi;
+}
 
-  # Install neovim python package
-  sudo pip3 install neovim
+function install() {
+	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+		--exclude "README.md" --exclude "LICENSE.txt" --exclude "brew.sh" \
+    --exclude "apt.sh" -avh --no-perms . ~;
+	source ~/.bash_profile;
 
-  # Install/Update neovim vim-plug plugin
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  nvim --headless +PlugInstall +quitall
-
-  # Install YCM with C-family support
-  cd ~/.local/share/nvim/plugged/YouCompleteMe && ./install.py --clang-completer
+  # Configure tmux
+  if which tmux > /dev/null; then
+    tmux source-file ~/.tmux.conf
+  fi;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt;
+	update;
+	install;
 else
 	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
 	echo "";
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt;
+    if [ "$1" == "--update" -o "$1" == "-U" ]; then
+  		update;
+    else
+  		update;
+  		install;
+    fi;
 	fi;
 fi;
-unset doIt;
+unset update;
+unset install;
