@@ -26,6 +26,7 @@ brew install htop
 brew install git
 brew install libjpeg
 brew install the_silver_searcher  # ag
+brew install ctags
 brew install neovim/neovim/neovim
 
 # Install Python 2+3
