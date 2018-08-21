@@ -496,6 +496,7 @@ if HasPlugin('YouCompleteMe')
     let g:ycm_collect_identifiers_from_tags_files = 0
     let g:ycm_enable_diagnostic_highlighting = 0
     let g:ycm_key_invoke_completion = '<C-Space>'
+    let g:ycm_global_ycm_extra_conf = '~/.config/nvim/ycm_extra_conf.py'
 endif
 
 
