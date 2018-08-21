@@ -527,7 +527,7 @@ endif
 
 
 " NCM2 (nvim completion manager)
-" ----------------------------------------------------------------------------
+" ------------------------------
 if HasPlugin('ncm2')
     autocmd BufEnter * call ncm2#enable_for_buffer()
     "inoremap <expr> <C-Space>  ncm2#_do_auto_trigger()
@@ -555,8 +555,8 @@ if HasPlugin('jedi-vim')
 endif
 
 
-" LSP
-" ----------------------------------------------------------------------------
+" LSP (language server client)
+" ----------------------------
 if HasPlugin('LanguageClient-neovim')
     let g:LanguageClient_autoStart = 1
     let g:LanguageClient_serverCommands = {
@@ -570,7 +570,7 @@ endif
 
 
 " A.L.E
-" ----------------------------------------------------------------------------
+" -----
 "highlight clear ALEErrorSign
 "highlight clear ALEWarningSign
 let g:airline#extensions#ale#enabled = 1
@@ -610,7 +610,6 @@ let g:ale_completion_excluded_words = ['from', 'import']
 
 
 " vim-multiple-cursors
-
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_start_word_key = '<C-f>'
 let g:multi_cursor_next_key = '<C-f>'
@@ -619,8 +618,10 @@ let g:multi_cursor_quit_key = '<C-\>'
 
 
 " IndentLine
-
 let g:indentLine_char = '│'
 let g:indentLine_first_char = '│'
 let g:indentLine_showFirstIndentLevel = 1
 let g:indentLine_setColors = 0
+
+" auto-pairs
+let g:AutoPairsMapCh = 0
