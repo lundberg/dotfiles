@@ -150,7 +150,7 @@ set backup
 
 " Help
 " Follow link and jump to subject/topic
-nnoremap <buffer> <CR> <C-]>
+nnoremap <leader>h <C-S-]>
 
 
 " Modes
