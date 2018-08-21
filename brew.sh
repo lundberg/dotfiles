@@ -30,7 +30,7 @@ brew install ctags
 brew install neovim/neovim/neovim
 
 # Install Python 2+3
-brew install python
+brew install python@2
 brew install python3
 
 # Remove outdated versions from the cellar.
