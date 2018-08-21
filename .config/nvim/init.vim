@@ -8,14 +8,19 @@ endif
 " Enable plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-"Plug 'scrooloose/syntastic'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/BufOnly.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Yggdroot/indentLine'
+Plug 'ervandew/supertab'
+Plug 'ambv/black'
 
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ivalkeen/vim-ctrlp-tjump'
+Plug 'FelikZ/ctrlp-py-matcher'
 Plug 'brooth/far.vim'
 
 Plug 'vim-airline/vim-airline'
@@ -23,20 +28,30 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'junegunn/gv.vim'
+Plug 'junegunn/gv.vim'  " Git log
 
-Plug 'Valloric/YouCompleteMe', { 'on': [] }
-"Plug 'klen/python-mode'
-"Plug 'xolox/vim-easytags'
-"Plug 'bfredl/nvim-ipy'
+Plug 'Valloric/YouCompleteMe', {'for': []}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+"Plug 'autozimu/LanguageClient-neovim', {'branch': 'next', 'do': 'bash install.sh'}
 
-" TODO: Defer loading based on extension
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-jedi'  ", {'for': 'python'}
+"Plug 'junegunn/fzf'
+
+"Plug 'ncm2/ncm2'
+"Plug 'roxma/nvim-yarp'
+"Plug 'ncm2/ncm2-ultisnips'
+"Plug 'SirVer/ultisnips'
+"Plug 'honza/vim-snippets'
+
+Plug 'kh3phr3n/python-syntax'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'groenewege/vim-less'
 Plug 'elzr/vim-json'
 Plug 'plasticboy/vim-markdown'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'mxw/vim-jsx'
 
 " Color schemes and icons
 Plug 'rakr/vim-one'
@@ -45,16 +60,9 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'ryanoasis/vim-devicons'
 Plug 'icymind/NeoSolarized'
 Plug 'freeo/vim-kalisi'
+Plug 'ayu-theme/ayu-vim'
 
 call plug#end()
-
-
-" Defer plugin loading
-augroup load_deferred_plugins
-  autocmd!
-  autocmd InsertEnter * call plug#load('YouCompleteMe')
-                     \| autocmd! load_deferred_plugins
-augroup END
 
 
 " Clipboard
