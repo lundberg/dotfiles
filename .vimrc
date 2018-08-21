@@ -157,7 +157,7 @@ nnoremap <buffer> <CR> <C-]>
 " Escape faster, e.g. exit insert mode
 " Ctrl-ö
 map <C-\> <ESC>
-nmap <C-\> <ESC>:nohlsearch<CR>
+nmap <silent> <C-\> <ESC>:nohlsearch<CR>
 imap <C-\> <ESC>
 vmap <C-\> <ESC>
 cmap <C-\> <CR><ESC>
