@@ -48,7 +48,7 @@ endfunction
 
 function! g:SetColorScheme()
     " Theme specific settings
-    exe 'let g:ayucolor="' . g:COLOR . '"'
+    exe 'let g:ayucolor="' . (exists('g:COLOR_AYU') ? g:COLOR_AYU : g:COLOR) . '"'
 
     exe "set background=" . g:COLOR
     exe "colorscheme " . (g:COLOR == 'dark' ? g:DARK : g:LIGHT)
