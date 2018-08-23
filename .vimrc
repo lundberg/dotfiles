@@ -12,6 +12,7 @@ set modelines=1                 " Enable file specific vim config
 set noshowmode                  " Dont show mode, i.e. -- INSERT --
 set splitbelow                  " Open vertical splits below
 set splitright                  " Open horizontal split right
+set diffopt=vertical            " Allways split diff vertical e.g. side by side
 set backspace=indent,eol,start  " Normal backspace
 set tags=.tags                  " Set ctags folder name
 set ttimeoutlen=10              " faster leaving insert mode,
@@ -322,7 +323,10 @@ nmap <silent> <leader>gu :Git up<CR>
 nmap <silent> <leader>gl :GV<CR>
 nmap <silent> <leader>gs :Gstatus<CR>
 nmap <silent> <leader>gg :Gcommit -v<CR>
+nmap <silent> <leader>ga :Gcommit --amend --no-edit<CR>
 nmap <silent> <leader>gb :Gblame<CR>
+nmap <silent> <leader>gd :Gdiff<CR>
+nmap <silent> <leader>gp :diffput 1<CR>
 nmap <silent> <leader>gc :Gread - \| up!<CR>
 nmap <silent> <leader>gt :GitGutterToggle<CR>
 nmap <leader>g+ <Plug>GitGutterStageHunk
