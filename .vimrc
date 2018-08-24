@@ -247,6 +247,8 @@ nmap <silent> <tab> :bn<CR>
 nmap <silent> <BS> :bp<CR>
 " Expand panel
 nmap <silent> + :only<CR>
+" Close all panels/buffers except current
+nmap <silent> ± :BufOnly<CR>
 " Normalize all split sizes : ALT-0
 nmap ≈ <C-W>=
 " Resize left most pane to 86 width (80 + gutter + lineno)
