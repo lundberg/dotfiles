@@ -590,6 +590,17 @@ let g:ale_completion_delay = 10
 let g:ale_completion_max_suggestions = 10
 let g:ale_completion_excluded_words = ['from', 'import']
 
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'scss': ['stylelint'],
+\   'css': ['stylelint'],
+\}
+let g:ale_javascript_eslint_executable = expand('~/.config/nvim/node_modules/.bin/eslint')
+let g:ale_javascript_eslint_use_global = 0
+let g:ale_scss_stylelint_executable = expand('~/.config/nvim/node_modules/.bin/stylelint')
+
 " WIP standalone ALE language server completion:
     "let g:ale_linters = {
     "\   'python': ['flake8', 'mypyls'],
