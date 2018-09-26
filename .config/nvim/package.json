@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "eslint": "4.16.0",
+    "eslint-config-lydell": "6.1.0",
+    "eslint-plugin-prettier": "2.6.0",
+    "eslint-plugin-react": "7.6.1",
+    "prettier": "1.10.2"
+  }
+}
