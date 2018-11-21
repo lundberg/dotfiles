@@ -224,7 +224,8 @@ set previewheight=20  " Used by e.g. fugitive/GStatus
 nnoremap <S-l> <C-i>
 nnoremap <S-h> <C-O>
 
-" Add empty line above cursor in normal mode and remember position: ALT-j
+
+" Add empty line above cursor in normal mode and remember position: ALT-o
 nmap <silent> œ maO<ESC>`a
 
 
@@ -233,6 +234,11 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-k> :wincmd k<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
+
+
+" Scroll one line up/down shortcut: ALT-k / ALT-j
+nnoremap ª <C-y>
+nnoremap √ <C-e>
 
 
 " Buffer movement in insert mode
@@ -285,9 +291,9 @@ nmap <silent> ° :quitall!<CR>
 " Current : ALT-l
 nmap <silent> ﬁ :ll<CR>
 " Previous : ALT-k
-nmap <silent> ª :lprevious<CR>
+"nmap <silent> ª :lprevious<CR>
 " Next : ALT-j
-nmap <silent> √ :lnext<CR>
+"nmap <silent> √ :lnext<CR>
 
 
 " ctags
