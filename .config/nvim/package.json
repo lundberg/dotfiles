@@ -1,13 +1,17 @@
 {
   "private": true,
   "dependencies": {
-    "babel-eslint": ">=8.2.1",
-    "eslint": ">=4.16.0",
-    "eslint-config-lydell": ">=6.1.0",
-    "eslint-plugin-prettier": ">=2.6.0",
-    "eslint-plugin-react": ">=7.6.1",
-    "prettier": ">=1.10.2",
-    "stylelint": ">=8.5.0",
-    "stylelint-config-standard": ">=18.0.0"
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.12.0",
+    "eslint-config-lydell": "12.0.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jest": "22.1.2",
+    "eslint-plugin-prettier": "3.0.0",
+    "eslint-plugin-react": "7.11.1",
+    "eslint-plugin-simple-import-sort": "2.0.0",
+    "prettier": "^1.15.3",
+    "stylelint": "^9.9.0",
+    "stylelint-config-standard": ">=18.0.0",
+    "jest": "23.6.0"
   }
 }
