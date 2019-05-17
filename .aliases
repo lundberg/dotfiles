@@ -48,7 +48,7 @@ alias map="xargs -n1"
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
 # Python: venv, remove pyc-files recursively
-alias venv='python3 -m venv venv'
+alias venv='test -d venv || (echo "Creating virtual environment..."; python3 -m venv venv) && printf "Activating...\n\n" && source venv/bin/activate'
 alias cleanpyc='find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf'
 
 # Docker
