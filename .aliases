@@ -47,7 +47,8 @@ alias map="xargs -n1"
 # Lock the screen (when going AFK)
 alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 
-# Remove pyc-files recursively
+# Python: venv, remove pyc-files recursively
+alias venv='python3 -m venv venv'
 alias cleanpyc='find . | grep -E "(__pycache__|\.pyc$)" | xargs rm -rf'
 
 # Docker
