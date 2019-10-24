@@ -657,3 +657,6 @@ let g:indentLine_setColors = 0
 
 " auto-pairs
 let g:AutoPairsMapCh = 0
+
+" vim-markdown
+let g:vim_markdown_conceal = 0
