@@ -359,7 +359,7 @@ nmap <silent> ÖÖ :CtrlPtjump<CR>
 
 let g:ctrlp_tjump_only_silent = 1
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_custom_ignore = 'node_modules\|dist\|coverage\|venv'
+let g:ctrlp_custom_ignore = 'node_modules\|dist\|coverage\|venv\|.*.egg-info'
 
 
 
