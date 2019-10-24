@@ -9,6 +9,7 @@ set showmatch                   " Higlight matching parenthesis
 set mouse=a                     " Enable mouse
 set laststatus=2                " Show airline on open
 set modelines=1                 " Enable file specific vim config
+set signcolumn=yes              " Enable sign column
 set noshowmode                  " Dont show mode, i.e. -- INSERT --
 set splitbelow                  " Open vertical splits below
 set splitright                  " Open horizontal split right
@@ -294,6 +295,11 @@ nmap <silent> ﬁ :ll<CR>
 "nmap <silent> ª :lprevious<CR>
 " Next : ALT-j
 "nmap <silent> √ :lnext<CR>
+
+
+" Toggle line GUI elements; signcolumn, numbers and indentation lines
+" ALT-t
+nmap <silent> † :if &signcolumn == "yes" \| set signcolumn=no \| else \| set signcolumn=yes \| endif \| set number! \| IndentLinesToggle<CR>
 
 
 " ctags
