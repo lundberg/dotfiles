@@ -1,7 +1,7 @@
 # Python files
 *.pyc
 .eggs/
-.tags/
+.tags
 venv/
 
 # Folder view configuration files
