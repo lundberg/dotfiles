@@ -307,7 +307,6 @@ function! BuildCTags()
     echohl Comment
     echo 'Building ctags... '
     silent! exe "!ctags -R -f .tags &> /dev/null"
-    "silent! exe "!ctags -R --languages=python --python-kinds=-iv --exclude=.git --sort=foldcase -f .tags &> /dev/null"
     redraw!
     echohl String
     echo "Successfully generated ctags!"
@@ -359,7 +358,7 @@ nmap <silent> ÖÖ :CtrlPtjump<CR>
 
 let g:ctrlp_tjump_only_silent = 1
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
-let g:ctrlp_custom_ignore = 'node_modules\|dist\|coverage\|venv\|.*.egg-info'
+let g:ctrlp_custom_ignore = 'node_modules\|dist\|build\|coverage\|venv\|.*.egg-info'
 
 
 

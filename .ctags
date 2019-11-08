@@ -87,5 +87,11 @@
 --exclude=\*.bak
 --exclude=\.tags
 --exclude=\.venv
+--exclude=venv
+--exclude=\.nox
+--exclude=\.tox
 --exclude=node_modules
 --exclude=\.git
+--exclude=\.eggs
+--exclude=\./build
+--exclude=\./dist
