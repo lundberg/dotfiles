@@ -265,7 +265,7 @@ nmap <silent> - :close<CR>
 " Close buffer and panel
 nmap <silent> – :bd<CR>
 " Close buffer : ALT-w
-nmap <silent> Ω :bp \| bd #<CR>
+nmap <expr> <silent> Ω getwinvar(winnr(), "&pvw") ? ":bp\|split\|pc\<CR>" : ":bp\|bd #\<CR>"
 " Force close buffer : SHIFT-ALT-w
 nmap <silent> ˝ :bp \| bd! #<CR>
 " Horizontal split
@@ -616,6 +616,7 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'scss': ['stylelint'],
 \   'css': ['stylelint'],
+\   'markdown': [],
 \}
 let g:ale_javascript_eslint_executable = expand('~/.config/nvim/node_modules/.bin/eslint')
 let g:ale_javascript_eslint_use_global = 0
