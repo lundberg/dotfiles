@@ -285,7 +285,8 @@ nmap <silent> ® :edit!<CR>
 " Quit : ALT-q
 nmap <silent> • :quit<CR>
 " Force quit : SHIFT-ALT-q
-nmap <silent> ° :quitall!<CR>
+nmap <silent> ° :cq!<CR>
+"nmap <silent> ° :quitall!<CR>
 
 
 " Location window:
