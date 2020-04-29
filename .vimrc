@@ -346,7 +346,7 @@ nmap <silent> <leader>gc :Gread - \| up!<CR>
 nmap <silent> <leader>gt :GitGutterToggle<CR>
 nmap <leader>g+ <Plug>GitGutterStageHunk
 nmap <leader>g- <Plug>GitGutterUndoHunk
-nmap <silent> <leader>gf yiw <ESC>:Git commit --fixup=<C-r>"<CR>
+nmap <silent> <leader>gf yiwq <ESC>:Git commit --fixup=<C-r>"<CR>
 " ALT-SHIFT-k
 nmap <silent> º :GitGutterPrevHunk<CR>
 " ALT-SHIFT-j
