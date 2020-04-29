@@ -139,7 +139,8 @@ au BufNewFile,BufRead *.py set
 " Highlight 88+ columns
 au BufNewFile,BufRead *.py let &colorcolumn=join(range(89,999),",")
 " Breakpoint shortcut
-au FileType python map <silent> <leader>b Oimport pdb; pdb.set_trace()<ESC>w:w<CR>
+"au FileType python map <silent> <leader>b Oimport pdb; pdb.set_trace()<ESC>w:w<CR>
+au FileType python map <silent> <leader>b Obreakpoint()<ESC>w:w<CR>
 
 
 " Swaps / Backups
